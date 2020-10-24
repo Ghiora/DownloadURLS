@@ -1,0 +1,19 @@
+# Please do not use for illegal activity.
+# I Installed and removed those when I got an AES error..
+# Installing them did not help
+# AES Crypto
+pip install streamlink pycrypto
+
+
+# For example if you want to download the following URL:
+# Lecture 11 - Introduction to Neural Networks | Stanford CS229: Machine Learning (Autumn 2018)
+https://www.youtube.com/watch?v=MfIjxPh6Pys
+
+Download:
+streamlink -o "output.ts" "https://www.youtube.com/watch?v=MfIjxPh6Pys" 1080p,best
+
+# This converts it to mp4
+ffmpeg -i output.ts -c copy output.mp4
+
+# And this to Music:
+ffmpeg -i output.mp4 -b:a 256k -vn music.mp3
